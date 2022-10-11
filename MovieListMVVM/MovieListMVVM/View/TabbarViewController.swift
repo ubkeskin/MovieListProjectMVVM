@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class TabbarViewController: UITabBarController {
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .red
@@ -17,9 +16,11 @@ class TabbarViewController: UITabBarController {
     tabBar.tintColor = .label
     setupVCs()
   }
+
   fileprivate func createNavController(for rootViewController: UIViewController,
                                        title: String,
-                                       image: UIImage) -> UIViewController {
+                                       image: UIImage) -> UIViewController
+  {
     let navController = UINavigationController(rootViewController: rootViewController)
     navController.tabBarItem.title = title
     navController.tabBarItem.image = image
@@ -27,6 +28,7 @@ class TabbarViewController: UITabBarController {
     rootViewController.navigationItem.title = title
     return navController
   }
+
   func setupVCs() {
     viewControllers = [
       createNavController(for: ViewController(), title: NSLocalizedString("Movies", comment: ""), image: UIImage(systemName: "film")!),

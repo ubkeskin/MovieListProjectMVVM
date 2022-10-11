@@ -5,15 +5,10 @@
 //  Created by OS on 10.10.2022.
 //
 
-import UIKit
 import Combine
+import UIKit
 
 class ViewController: UIViewController {
-  
-  enum Section {
-    case main
-  }
-  
   var viewModel = ViewModel()
   
   private var cancellables: Set<AnyCancellable> = []
@@ -30,23 +25,35 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     bindViewModel()
-    self.view.addSubview(collectionView)
+    view.addSubview(collectionView)
     NSLayoutConstraint.activate([
-      collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-      collectionView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-      collectionView.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor),
-      collectionView.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor)
+      collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+      collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
     ])
   }
+
   private func bindViewModel() {
-    self.viewModel.fetchMovies()
+    viewModel.fetchMovies()
     
     viewModel.$movies
       .receive(on: DispatchQueue.main)
-      .sink { movies in
+      .sink { _ in
         self.collectionView.reloadData()
       }
       .store(in: &cancellables)
+  }
+  
+  private func loadPosterImage(movie: MovieResult, completion: @escaping (UIImage) -> Void) {
+    guard let url = viewModel.apiManager?.getMovieURL(dataResult: movie) else { return completion(UIImage(systemName: "film")!) }
+    var image = UIImage(systemName: "film")!
+    viewModel.apiManager?.loadImage(url: url, completion: { data, _ in
+      DispatchQueue.main.async {
+        image = UIImage(data: data!)!
+        completion(image)
+      }
+    })
   }
 }
 
@@ -54,11 +61,22 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     viewModel.movies.count
   }
-  
+
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    var image = UIImage()
+    let url = viewModel.apiManager?.getMovieURL(dataResult: viewModel.movies[indexPath.row])
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier, for: indexPath) as! CollectionViewCell
     cell.movieName.text = viewModel.movies[indexPath.row].title
-    cell.poster.image = UIImage(systemName: "film")
+    cell.popularityLabel.text = String(describing: viewModel.movies[indexPath.row].popularity)
+    cell.ratingLabel.text = String(describing: viewModel.movies[indexPath.row].voteAverage)
+    cell.releaseDateLabel.text = viewModel.movies[indexPath.row].releaseDate
+    DispatchQueue.main.async {
+      self.viewModel.apiManager?.loadImage(url: url!, completion: { _, _ in
+        self.loadPosterImage(movie: self.viewModel.movies[indexPath.row]) { image in
+          cell.poster.image = image
+        }
+      })
+    }
     return cell
   }
   
@@ -78,4 +96,3 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     return layout
   }
 }
-
