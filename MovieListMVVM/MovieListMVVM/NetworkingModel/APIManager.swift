@@ -6,51 +6,24 @@
 //
 
 import Foundation
+import UIKit
 
-class APIManager: Endpoint {
-  func provideValues(section: Section, genre: Genre) -> (url: URL, method: String, parameters: [String : Any]) {
-
-    let method = "GET"
-    var parameters = ["api_key":"23a23e89a3ba0b461401eb64ff2afcdb", "language":"en-US", "page": "\(Int.random(in: 1...100))" ]
-    lazy var url: URL? = {
-      var url: URL?
-      switch section {
-        case .topRated:
-          switch genre {
-            case .tv:
-              url = URL(string: "https://api.themoviedb.org/3/tv/top_rated")
-            case .movie:
-              url = URL(string: "https://api.themoviedb.org/3/movie/top_rated")
-          }
-        case .popular:
-          switch genre {
-            case .tv:
-              url = URL(string: "https://api.themoviedb.org/3/tv/popular")
-            case .movie:
-              url = URL(string: "https://api.themoviedb.org/3/movie/popular")
-          }
-        case .nowPlaying:
-          switch genre {
-            case .tv:
-              fatalError()
-            case .movie:
-              url = URL(string: "https://api.themoviedb.org/3/movie/now_playing")
-          }
-          return url
-      }
-    }()
-    return (url: self.url, method: self.method, parameters: self.parameters)
-    
-  }
+class APIManager {
   
   static var decoder = JSONDecoder()
-  
-  func request(url: URL, method: String, parameters: Any, completionHandler: @escaping (Result<Any>) -> ()) {
+
+  func request(endpoint: Endpoint,
+               completionHandler: @escaping (Result<Any>) -> ()) {
     
-    var urlComponents = URLComponents(string: url.description)
-    urlComponents?.queryItems = parameters as? [URLQueryItem]
+    var urlComponents = URLComponents(string: endpoint.url.description)
+    urlComponents?.queryItems = endpoint.parameters.map({ (key: String, value: String) in
+      URLQueryItem(name: key, value: value)
+    }).sorted(by: { item1, item2 in
+      item1.value!.count > item2.value!.count
+    })
     var request = URLRequest(url: (urlComponents?.url)!)
-    request.httpMethod = method
+    request.httpMethod = endpoint.method
+    print(request)
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
       if let error = error {
         print("error took place \(error)")
@@ -68,6 +41,17 @@ class APIManager: Endpoint {
       }
         completionHandler(Result.success(data))
     }
+    task.resume()
+  }
+  func loadPosterImage(movie: MovieResult, completion: @escaping (UIImage) -> Void) {
+    let url = getMovieURL(dataResult: movie)
+    var image = UIImage(systemName: "film")!
+    loadImage(url: url, completion: { data, _ in
+      DispatchQueue.main.async {
+        image = UIImage(data: data!)!
+        completion(image)
+      }
+    })
   }
   
   func getMoviesData(successHandler: @escaping (MoviesData) -> Void, errorHandler: @escaping (Error) -> Void) {

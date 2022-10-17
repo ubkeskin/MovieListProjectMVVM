@@ -84,5 +84,597 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A026CC39-A766-4017-842B-D4AFC6A5DC10"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieListMVVM/NetworkingModel/JSONClient.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "makeAPICall(to:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A026CC39-A766-4017-842B-D4AFC6A5DC10 - 7cb981cda1c2bb47"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MovieListMVVM.JSONClient.makeAPICall(to: MovieListMVVM.Endpoint, completionHandler: (MovieListMVVM.Result&lt;Any&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/NetworkingModel/JSONClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "A026CC39-A766-4017-842B-D4AFC6A5DC10 - a9fb508bcfbc361"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (MovieListMVVM.Result&lt;Any&gt;) -&gt; () in static MovieListMVVM.JSONClient.makeAPICall(to: MovieListMVVM.Endpoint, completionHandler: (MovieListMVVM.Result&lt;Any&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/NetworkingModel/JSONClient.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "62D92772-1303-4C2A-8F10-BF2ED81964FA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieListMVVM/NetworkingModel/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "request(endpoint:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "326863C6-D6F9-4C8D-A3B8-F60B3032E70F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieListMVVM/NetworkingModel/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "request(endpoint:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "326863C6-D6F9-4C8D-A3B8-F60B3032E70F - 2e3474da7d8342de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.APIManager.request(endpoint: MovieListMVVM.Endpoint, completionHandler: (MovieListMVVM.Result&lt;Any&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/NetworkingModel/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "2388">
+               </Location>
+               <Location
+                  uuid = "326863C6-D6F9-4C8D-A3B8-F60B3032E70F - 13b840978cc34813"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieListMVVM.APIManager.request(endpoint: MovieListMVVM.Endpoint, completionHandler: (MovieListMVVM.Result&lt;Any&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/NetworkingModel/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "276">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3186F46A-C434-46A0-9D5F-994D56E4128E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieListMVVM/NetworkingModel/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "request(endpoint:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3186F46A-C434-46A0-9D5F-994D56E4128E - 13b840978cc348fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieListMVVM.APIManager.request(endpoint: MovieListMVVM.Endpoint, completionHandler: (MovieListMVVM.Result&lt;Any&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/NetworkingModel/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "696">
+               </Location>
+               <Location
+                  uuid = "3186F46A-C434-46A0-9D5F-994D56E4128E - 13b840978cc348fe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieListMVVM.APIManager.request(endpoint: MovieListMVVM.Endpoint, completionHandler: (MovieListMVVM.Result&lt;Any&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/NetworkingModel/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "864">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6A21C5CA-5105-4B8A-A6ED-F8C6B69207C1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieListMVVM/NetworkingModel/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "request(endpoint:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9C9613D3-6887-4B04-8B6D-3A6E9C799946"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieListMVVM/NetworkingModel/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "request(endpoint:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9C9613D3-6887-4B04-8B6D-3A6E9C799946 - 13b840978cc34813"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieListMVVM.APIManager.request(endpoint: MovieListMVVM.Endpoint, completionHandler: (MovieListMVVM.Result&lt;Any&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/NetworkingModel/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  uuid = "9C9613D3-6887-4B04-8B6D-3A6E9C799946 - 13b840978cc34813"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieListMVVM.APIManager.request(endpoint: MovieListMVVM.Endpoint, completionHandler: (MovieListMVVM.Result&lt;Any&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/NetworkingModel/APIManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "304">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "571D5375-79F9-4C05-93A0-8CEE5426027B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieListMVVM/NetworkingModel/APIManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "request(endpoint:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "ViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726 - 14be270353398095"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of MovieListMVVM.ViewModel.movies : Swift.Array&lt;MovieListMVVM.MovieResult&gt;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726 - 18fc9842a1b6707"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.movies.getter : Swift.Array&lt;MovieListMVVM.MovieResult&gt;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726 - 13258a5570804f0b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.movies.setter : Swift.Array&lt;MovieListMVVM.MovieResult&gt;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726 - 31f9700e1402138"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.movies.modify : Swift.Array&lt;MovieListMVVM.MovieResult&gt;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726 - ae93d80b560314b0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.movies.modify : Swift.Array&lt;MovieListMVVM.MovieResult&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726 - 98ae360696e45b5b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.$movies.getter : Combine.Published&lt;Swift.Array&lt;MovieListMVVM.MovieResult&gt;&gt;.Publisher"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726 - 98ae360696e45b5b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.$movies.setter : Combine.Published&lt;Swift.Array&lt;MovieListMVVM.MovieResult&gt;&gt;.Publisher"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726 - 79c59c2f77f1bbb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.$movies.modify : Combine.Published&lt;Swift.Array&lt;MovieListMVVM.MovieResult&gt;&gt;.Publisher"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726 - 1f93b3164915864"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.$movies.modify : Combine.Published&lt;Swift.Array&lt;MovieListMVVM.MovieResult&gt;&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "9339CFD1-F3DA-40D9-97B5-EDFA0EA90726 - 276cbfc33199e0f1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.init(view: MovieListMVVM.ViewControllerInterface) -&gt; MovieListMVVM.ViewModel"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "244">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "ViewModel"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C - 7106d5e85a59fe2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of MovieListMVVM.ViewModel.tvResult : Swift.Array&lt;MovieListMVVM.TVShowsResult&gt;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C - 73cbe6f0878918bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.tvResult.getter : Swift.Array&lt;MovieListMVVM.TVShowsResult&gt;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "112">
+               </Location>
+               <Location
+                  uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C - 4712efd372bf58c0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.tvResult.setter : Swift.Array&lt;MovieListMVVM.TVShowsResult&gt;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C - 40d0f72ff67098b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.tvResult.modify : Swift.Array&lt;MovieListMVVM.TVShowsResult&gt;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C - f0c87f2c513ad3cb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.tvResult.modify : Swift.Array&lt;MovieListMVVM.TVShowsResult&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C - ac04f924798e13bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.$tvResult.getter : Combine.Published&lt;Swift.Array&lt;MovieListMVVM.TVShowsResult&gt;&gt;.Publisher"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "96">
+               </Location>
+               <Location
+                  uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C - ac04f924798e13bb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.$tvResult.setter : Combine.Published&lt;Swift.Array&lt;MovieListMVVM.TVShowsResult&gt;&gt;.Publisher"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C - 333696e018155378"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.$tvResult.modify : Combine.Published&lt;Swift.Array&lt;MovieListMVVM.TVShowsResult&gt;&gt;.Publisher"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C - d7da43f7eaa326d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.$tvResult.modify : Combine.Published&lt;Swift.Array&lt;MovieListMVVM.TVShowsResult&gt;&gt;.Publisher with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "8EB7BC62-8F1F-4AB8-9307-C9FD755FB35C - 276cbfc33199e0d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MovieListMVVM.ViewModel.init(view: MovieListMVVM.ViewControllerInterface) -&gt; MovieListMVVM.ViewModel"
+                  moduleName = "MovieListMVVM"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a1/Desktop/CS/Swift/MyProjects/MovieListProjectMVVM/MovieListProjectMVVM/MovieListMVVM/MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "312">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CBA085A-9A41-4B6F-AD63-7F92A0D7FE76"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MovieListMVVM/LibraryView/ViewModel/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "fetchMovie(section:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
