@@ -6,28 +6,25 @@
 //
 
 import Foundation
+import UIKit
+
 
 class APIManager {
-  static var decoder = JSONDecoder()
   
-  func getMoviesData(successHandler: @escaping (MoviesData) -> Void, errorHandler: @escaping (Error) -> Void) {
-    var urlQuery: String {
-      var urlQuery = "top_rated"
-      // TODO: add query possibilities.
-      return urlQuery
-    }
-    var urlComponents = URLComponents()
-    urlComponents.scheme = "https"
-    urlComponents.host = "api.themoviedb.org"
-    urlComponents.path = "/3/movie/" + "\(urlQuery)"
-    urlComponents.queryItems = [
-      URLQueryItem(name: "api_key", value: "23a23e89a3ba0b461401eb64ff2afcdb"),
-      URLQueryItem(name: "page", value: "1"),
-      URLQueryItem(name: "region", value: "DE")
-    ]
+  static var decoder = JSONDecoder()
+
+  func request(endpoint: GenreEndpoint,
+               completionHandler: @escaping (Result<Any>) -> ()) {
     
-    var request = URLRequest(url: urlComponents.url!)
-    request.httpMethod = "GET"
+    var urlComponents = URLComponents(string: endpoint.url.description)
+    urlComponents?.queryItems = endpoint.parameters.map({ (key: String, value: String) in
+      URLQueryItem(name: key, value: value)
+    }).sorted(by: { item1, item2 in
+      item1.value!.count > item2.value!.count
+    })
+    var request = URLRequest(url: (urlComponents?.url)!)
+    request.httpMethod = endpoint.method
+    print(request)
     let task = URLSession.shared.dataTask(with: request) { data, response, error in
       if let error = error {
         print("error took place \(error)")
@@ -39,25 +36,29 @@ class APIManager {
       }
       guard let data = data else {
         DispatchQueue.main.async {
-          errorHandler(NSError(domain: "", code: 0, userInfo: nil))
+          completionHandler(Result.failure(NSError(domain: "", code: 0)))
         }
         return
       }
-      let decoder = JSONDecoder()
-      
-      do {
-        let mediaResponse = try decoder.decode(MoviesData.self, from: data)
-        DispatchQueue.main.async {
-          successHandler(mediaResponse)
-        }
-      }
-      catch {
-        print(error)
-      }
+        completionHandler(Result.success(data))
     }
     task.resume()
   }
-
+  
+  // make
+  func loadPosterImage(genre: Genre, dataResult: Any, completion: @escaping (UIImage) -> Void) {
+    let url = getMovieURL(genre: genre, dataResult: dataResult)
+    var image = UIImage(systemName: "film")!
+    loadImage(url: url, completion: { data, _ in
+      DispatchQueue.main.async {
+        image = UIImage(data: data!)!
+        completion(image)
+      }
+    })
+  }
+  
+  //TODO delete and integrate SPM ımage loader
+  
   func downloadImage(_ url: URL, file: URL, completion: @escaping (Error?) -> Void) {
     let task = URLSession.shared.downloadTask(with: url) { tempUrl, _, error in
       guard let tempURL = tempUrl else {
@@ -111,13 +112,27 @@ class APIManager {
     }
   }
 
-  func getMovieURL(dataResult: MovieResult) -> URL {
-    let placeHolderImagePath = URL(string: "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg")!
-    guard let path = dataResult.posterPath else { return placeHolderImagePath }
-    let host = "https://image.tmdb.org/t/p/w500"
-    guard let url = URL(string: host + path) else {
-      fatalError("did not get url")
+  func getMovieURL(genre: Genre, dataResult: Any) -> URL {
+    switch genre {
+      case .movie(section: _):
+        guard let dataResult = dataResult as? MovieResult else { fatalError()}
+        let placeHolderImagePath = URL(string: "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg")!
+        guard let path = dataResult.posterPath else { return placeHolderImagePath }
+        let host = "https://image.tmdb.org/t/p/w500"
+        guard let url = URL(string: host + path) else {
+          fatalError("did not get url")
+        }
+        return url
+      case .tv(section: _):
+        guard let dataResult = dataResult as? TVShowsResult else { fatalError() }
+        let placeHolderImagePath = URL(string: "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg")!
+        guard let path = dataResult.posterPath else { return placeHolderImagePath }
+        let host = "https://image.tmdb.org/t/p/w500"
+        guard let url = URL(string: host + path) else {
+          fatalError("did not get url")
+        }
+        return url
     }
-    return url
+
   }
 }
