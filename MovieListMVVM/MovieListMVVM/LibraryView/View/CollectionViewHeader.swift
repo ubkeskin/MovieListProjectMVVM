@@ -11,20 +11,37 @@ import UIKit
 class CollectionViewHeaderView: UICollectionReusableView {
   static let reuseIdentity = String(describing: CollectionViewHeaderView.self)
   
-  var genre: Genre = .movie(section: .popular)
-  var section: Section = .popular
+  var genre: Genre = .movie(section: nil)
   lazy var segmentControl: UISegmentedControl = {
     var segmentControl = UISegmentedControl(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 80))
     switch genre {
       case .tv(section: let section):
         segmentControl.insertSegment(withTitle: "popular", at: 0, animated: false)
         segmentControl.insertSegment(withTitle: "top", at: 1, animated: false)
-        segmentControl.selectedSegmentIndex = 0
-      case .movie(section:let section):
+        switch section {
+          case .popular:
+            segmentControl.selectedSegmentIndex = 0
+          case .topRated:
+            segmentControl.selectedSegmentIndex = 1
+          case .none:
+            fatalError()
+          case .some(.nowPlaying):
+            fatalError()
+        }
+      case .movie(section: let section):
         segmentControl.insertSegment(withTitle: "popular", at: 0, animated: false)
         segmentControl.insertSegment(withTitle: "top", at: 1, animated: false)
         segmentControl.insertSegment(withTitle: "nowplaying", at: 2, animated: false)
-        segmentControl.selectedSegmentIndex = 0
+        switch section {
+            case .popular:
+              segmentControl.selectedSegmentIndex = 0
+            case .topRated:
+              segmentControl.selectedSegmentIndex = 1
+          case .nowPlaying:
+            segmentControl.selectedSegmentIndex = 2
+            case .none:
+              fatalError()
+        }
     }
     return segmentControl
   }()

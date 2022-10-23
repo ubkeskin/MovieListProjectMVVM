@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol Endpoint {
+protocol GenreEndpoint {
   var url: URL {get}
   var method: String {get}
   var parameters: [String: String] {get}
-  func provideValues()-> (url: URL, method: String, parameters: [String: String])
+  func provideValues() -> (url: URL, method: String, parameters: [String: String])
 }
-extension Endpoint {
+extension GenreEndpoint {
   var url: URL {provideValues().url}
   var method: String {provideValues().method}
   var parameters: [String: String] {provideValues().parameters}

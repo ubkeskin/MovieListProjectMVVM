@@ -10,7 +10,7 @@ import Foundation
 
 enum JSONClient {
   typealias JSONCompletionHandler = (Result<Any>) -> ()
-  static func makeAPICall(to endpoint: Endpoint, completionHandler: @escaping JSONCompletionHandler) {
+  static func makeAPICall(to endpoint: GenreEndpoint, completionHandler: @escaping JSONCompletionHandler) {
     APIManager().request(endpoint: endpoint) { response in
       switch response {
         case .success(let response):

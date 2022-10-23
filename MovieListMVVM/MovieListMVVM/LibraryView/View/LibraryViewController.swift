@@ -9,76 +9,37 @@ import Combine
 import UIKit
 
 protocol ViewControllerInterface: AnyObject {
-  var genre: Genre { get }
-  var section: Section { get set }
-  var cancellables: Set<AnyCancellable> { get set }
-
-  func setCollectionView()
+  var tabBarControllerSelectedIndex: Int { get }
+  
   func bindViewController()
-  func setCollectionViewCell(for cell: CollectionViewCell, indexPath: IndexPath)
+  func setCollectionView()
 }
 
 extension LibraryViewController: ViewControllerInterface {
-  func setCollectionViewCell(for cell: CollectionViewCell, indexPath: IndexPath) {
-    let url = viewModel?.getPosterUrl(indexPath: indexPath.row)
-    cell.movieName.text = viewModel?[indexPath.row].title
-    cell.popularityLabel.text = String(describing: viewModel?[indexPath.row].popularity)
-    cell.ratingLabel.text = String(describing: viewModel?[indexPath.row].voteAverage)
-    cell.releaseDateLabel.text = viewModel?[indexPath.row].releaseDate
-    DispatchQueue.main.async { [self] in
-      viewModel?.apiManager?.loadImage(url: url!, completion: {[self] _, _ in
-        viewModel?.apiManager.loadPosterImage(movie: (viewModel?[indexPath.row])!) { image in
-          cell.poster.image = image
-        }
-      })
-    }
-  }
-  
-  var genre: Genre {
-    if tabBarController?.selectedIndex == 0 {
-      return .movie(section: section)
-    } else {
-      return .tv(section: section)
-    }
-  }
-  var section: Section {
-    get {
-      .popular
-    }
-    set {}
-  }
-  var cancellables: Set<AnyCancellable> {
-    get {
-      []
-    }
-    set {}
+
+  var tabBarControllerSelectedIndex: Int {
+    guard let tabBarControllerSelectedIndex = tabBarController?.selectedIndex else  { return 0 }
+    return tabBarControllerSelectedIndex
   }
   func bindViewController() {
-    viewModel?.fetchMovie(section: section, completion: { [self] in
-      DispatchQueue.main.async {
-        self.collectionView.reloadData()
-      }
-    })
-   
+    switch viewModel?.genre {
+      case .tv(section: let section):
+        viewModel?.fetchTV(section: section!, completion: {
+          DispatchQueue.main.async { [self] in
+            collectionView.reloadData()
+          }
+        })
+      case .movie(section: let section):
+        viewModel?.fetchMovie(section: section!, completion: {
+          DispatchQueue.main.async { [self] in
+            collectionView.reloadData()
+          }
+        })
+      case .none:
+        fatalError()
+        
+    }
   }
-
-  func collectionViewLayout() -> UICollectionViewLayout {
-    let layout = UICollectionViewFlowLayout()
-    let cellWidthHeightConstant: CGFloat = UIScreen.main.bounds.width
-    
-    layout.sectionInset = UIEdgeInsets(top: 0,
-                                       left: 10,
-                                       bottom: 0,
-                                       right: 10)
-    layout.scrollDirection = .vertical
-    layout.minimumInteritemSpacing = 0
-    layout.minimumLineSpacing = 0
-    layout.itemSize = CGSize(width: cellWidthHeightConstant, height: cellWidthHeightConstant)
-    layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 100)
-    
-    return layout
-  }
-
   func setCollectionView() {
     collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
     view.addSubview(collectionView)
@@ -95,36 +56,35 @@ extension LibraryViewController: ViewControllerInterface {
       collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
     ])
   }
-
-  @objc func setSelectedSection(sender: UISegmentedControl) {
-    if tabBarController?.selectedIndex == 0 {
-      if sender.selectedSegmentIndex == 0 {
-        section = .popular
-        
-      } else if sender.selectedSegmentIndex == 1 {
-        section = .topRated
-      } else if sender.selectedSegmentIndex == 2 {
-        section = .nowPlaying
-      }
-    } else {
-      if sender.selectedSegmentIndex == 0 {
-        section = .popular
-      }
-      if sender.selectedSegmentIndex == 1 {
-        section = .topRated
-      }
-    }
-    bindViewController()
+  func setCollectionViewCell(for cell: CollectionViewCell, indexPath: IndexPath) {
+    viewModel?.setCollectionCell(for: cell, indexPath: indexPath)
   }
+  @objc func setSelectedSection(sender: UISegmentedControl) {
+      viewModel?.setSelectedSection(index: sender.selectedSegmentIndex)
+  }
+  func collectionViewLayout() -> UICollectionViewLayout {
+    let layout = UICollectionViewFlowLayout()
+    let cellWidthHeightConstant: CGFloat = UIScreen.main.bounds.width
+    
+    layout.sectionInset = UIEdgeInsets(top: 0,
+                                       left: 10,
+                                       bottom: 0,
+                                       right: 10)
+    layout.scrollDirection = .vertical
+    layout.minimumInteritemSpacing = 0
+    layout.minimumLineSpacing = 0
+    layout.itemSize = CGSize(width: cellWidthHeightConstant, height: cellWidthHeightConstant)
+    layout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.width, height: 100)
+    
+    return layout
+  }
+  
 }
 
-// TODO: Create protocol ViewController, and use it in view model.
 class LibraryViewController: UIViewController {
-  var collectionView: UICollectionView!
-  // TODO: Create view mdel protocol
   var viewModel: ViewModel?
-  
-  // TODO: Change with a proper funcion
+  var collectionView: UICollectionView!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     viewModel = ViewModel(view: self)
@@ -137,11 +97,13 @@ extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataS
     let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: CollectionViewHeaderView.reuseIdentity, for: indexPath) as! CollectionViewHeaderView
 
     if kind == UICollectionView.elementKindSectionHeader {
-      switch genre {
+      switch viewModel?.genre {
         case .tv:
-          headerView.genre = .tv(section: section)
+          headerView.genre = .tv(section: viewModel!.section)
         case .movie:
-          headerView.genre = .movie(section: section)
+          headerView.genre = .movie(section: viewModel!.section)
+        case .none:
+          fatalError()
       }
       headerView.segmentControl.addTarget(self, action: #selector(setSelectedSection), for: .allEvents)
     }
@@ -149,15 +111,19 @@ extension LibraryViewController: UICollectionViewDelegate, UICollectionViewDataS
   }
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    (viewModel?.movies.count)!
+    switch viewModel?.genre {
+      case .movie(section: _):
+        return (viewModel?.movies.count)!
+      case .tv(section: _):
+        return (viewModel?.tvResult.count)!
+      case .none:
+        return 0
+    }
+    
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    // TODO: Store data in viewmodel.
-    // TODO: Add get url function in Vİew Model Interface
-    // TODO: change force as with optional
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reuseIdentifier, for: indexPath) as? CollectionViewCell else { return UICollectionViewCell()}
-    // TODO: Subscript extension !! NOTICE
     setCollectionViewCell(for: cell, indexPath: indexPath)
     return cell
   }
