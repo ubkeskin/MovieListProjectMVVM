@@ -4,14 +4,12 @@
 //
 //  Created by OS on 10.10.2022.
 //
-
-import Foundation
 import UIKit
 
 class TabbarViewController: UITabBarController {
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .red
+    view.backgroundColor = .lightGray
     UITabBar.appearance().barTintColor = .systemBackground
     tabBar.tintColor = .label
     setupVCs()
@@ -24,7 +22,6 @@ class TabbarViewController: UITabBarController {
     let navController = UINavigationController(rootViewController: rootViewController)
     navController.tabBarItem.title = title
     navController.tabBarItem.image = image
-    navController.navigationBar.prefersLargeTitles = true
     rootViewController.navigationItem.title = title
     return navController
   }

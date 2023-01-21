@@ -46,10 +46,9 @@ extension ViewModel: ViewModelInterface {
                 cell.poster.image = image
               case .failure(let error):
                 print(error)
-            }
-          })
-
-        }
+          }
+        })
+      }
     }
   }
   func setSelectedSection(index: Int) {
@@ -71,7 +70,6 @@ extension ViewModel: ViewModelInterface {
     }
     view?.bindViewController()
   }
-  
   func getPosterUrl(indexPath: Int) -> URL {
     switch genre{
       case .movie(section: _):
@@ -80,7 +78,6 @@ extension ViewModel: ViewModelInterface {
         return self.apiManager.getMovieURL(genre: genre, dataResult: tvResult[indexPath])
     }
   }
-  
   func viewDidLoad() {
     view?.bindViewController()
     view?.setCollectionView()
@@ -94,9 +91,7 @@ extension ViewModel: ViewModelInterface {
         return tvResult.indices.contains(index) ? tvResult[index] : nil
     }
   }
-  
 }
-
 class ViewModel {
   weak var view: (ViewControllerInterface)?
   var apiManager: APIManager!
@@ -111,14 +106,11 @@ class ViewModel {
     }
   }
   var section: Section
-  
-  
   init(view: ViewControllerInterface) {
     self.apiManager = APIManager()
     self.view = view
     self.section = .popular
   }
-  
   func fetchMovie(section: Section, completion: @escaping () -> Void) {
     GenreJSONClient.fetchMovie(for: section) { [self] results in
       switch results {
@@ -131,7 +123,6 @@ class ViewModel {
       }
     }
   }
-  
   func fetchTV(section: Section, completion: @escaping () -> Void) {
     GenreJSONClient.fetchTV(for: section) {[self] results in
       switch results {
