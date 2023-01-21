@@ -5,7 +5,6 @@
 //  Created by OS on 17.10.2022.
 //
 
-import Foundation
 import UIKit
 
 class CollectionViewHeaderView: UICollectionReusableView {
